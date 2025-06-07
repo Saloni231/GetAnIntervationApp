@@ -30,7 +30,7 @@ body {
 
 .header {
     display: flex;
-    gap: 325px;
+    justify-content: space-between;
     padding: 0px 128px;
 }
 
@@ -41,6 +41,10 @@ body {
 }
 
 .nav {
+    display: flex;
+}
+
+.navItems {
     display: flex;
 }
 
@@ -64,8 +68,12 @@ body {
     height: 14px;
 }
 
+.inquiry {
+    display: flex;
+}
+
 .callNow {
-    margin: 20px 0px 0px 46px;
+    margin: 18px 0px 0px 46px;
     font-size: 14px;
     line-height: 41px;
     font-weight: 700;
@@ -154,7 +162,6 @@ body {
     /* Or whatever border you want */
 }
 
-
 .selectInput {
     border: 1px solid #ffffff;
     background-color: inherit;
@@ -212,6 +219,9 @@ body {
     top: -105px;
 }
 
+.greyBackground {
+    height: auto;
+}
 
 .whiteBackground {
     top: 22px;
@@ -226,9 +236,16 @@ body {
     margin-top: -30px;
 }
 
-.contentImages {
+.contentImagesDesktop {
     display: flex;
     gap: 36px;
+}
+
+.mainContentImage {
+    max-width: 371px;
+    min-width: 224px;
+    height: auto;
+    object-fit: cover;
 }
 
 .heading {
@@ -241,12 +258,25 @@ body {
     gap: 36px;
 }
 
+.desktopViewDetails {
+    display: flex;
+    gap: 36px;
+}
+
 .details {
     width: 371px;
     margin: 0;
     font-size: 14px;
     font-weight: 400;
     line-height: 24px;
+}
+
+.show-lg {
+    display: block;
+}
+
+.hide-lg {
+    display: none;
 }
 
 .sucessRateBtn {
@@ -290,7 +320,8 @@ body {
 
 .accordianPara {
     padding: 65px 70px;
-    width: 675px;
+    max-width: 675px;
+    min-width: 328px;
     height: 269px;
     background: #194D44;
     border-bottom-right-radius: 20px;
@@ -299,6 +330,10 @@ body {
 }
 
 .personImage {
+    max-width: 269px;
+    min-width: 180px;
+    height: auto;
+    object-fit: cover;
     border-bottom-left-radius: 20px;
     border-top-left-radius: 20px;
     box-shadow: 0px 10px 30px 0px #0000001F;
@@ -376,12 +411,6 @@ body {
     padding: 0px 128px;
 }
 
-.featureButtonGroups {
-    display: flex;
-    gap: 36px;
-    margin: 36px 0px;
-}
-
 .featureButton {
     background-color: inherit;
     border: 1px solid #5bc8af;
@@ -395,6 +424,7 @@ body {
     width: 371px;
     height: 96px;
     padding: 0px 72px;
+    margin: 18px;
 }
 
 .videoBlock {
@@ -482,4 +512,169 @@ body {
     font-size: 14px;
     font-weight: 400;
     line-height: 24px;
+}
+
+.desktopView {
+    display: block;
+}
+
+.mobileView {
+    display: none;
+}
+
+.peopleDetailContent {
+    display: flex;
+    gap: 36px;
+}
+
+.peopleDetails {
+    display: flex;
+    gap: 36px;
+}
+
+@media (max-width: 991px) {
+
+    .container {
+        width: 100%;
+    }
+
+    .headerBackgroundImage {
+        height: 1090px;
+    }
+
+    .header {
+        padding: 0px 24px;
+    }
+
+    .vertical-line {
+        display: none;
+    }
+
+    .nav {
+        flex-direction: column;
+    }
+
+    .navItems {
+        justify-content: end;
+    }
+
+    .headerContent {
+        flex-direction: column;
+        padding: 0px 24px;
+        align-items: center;
+    }
+
+    .detail {
+        font-size: 18px;
+        text-align: center;
+        line-height: 28px;
+    }
+
+    .content {
+        margin-top: 56px;
+    }
+
+    .customForm {
+        margin-top: 0;
+    }
+
+    .shadowBackground {
+        top: -100px;
+    }
+
+    .greyBackground {
+        height: 110px;
+        width: 100%;
+    }
+
+    .whiteBackground {
+        height: 82px;
+        width: 100%;
+    }
+
+    .MainContentDetail {
+        height: 768px;
+        padding: 0px 24px;
+        margin-top: -30px;
+    }
+
+    .desktopViewDetails {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .hide-lg {
+        display: block;
+    }
+
+    .show-lg {
+        display: none;
+    }
+
+    .sucessRateBtn {
+        margin-top: 36px;
+    }
+
+    .direction {
+        display: none;
+    }
+
+    .accordianBlock {
+        margin: 0px 24px;
+    }
+
+    .accordianContent {
+        margin: 0;
+    }
+
+    .desktopView {
+        display: none;
+    }
+
+    .mobileView {
+        display: block;
+        margin: auto;
+    }
+
+    .detailContent {
+        gap: 24px;
+    }
+
+    .accordianPara {
+        padding: 33px;
+        height: auto;
+    }
+
+    .quote {
+        width: 40px;
+        top: -10px;
+        right: 0;
+    }
+
+    .peopleDetailContent {
+        flex-direction: column;
+    }
+
+    .peopleDetails {
+        flex-direction: row;
+    }
+
+    .peopleBlockData {
+        padding: 25px 24px 0px;
+    }
+
+    .italicPara {
+        width: auto;
+    }
+
+    .features {
+        padding: 0px 24px;
+    }
+}
+
+@media (max-width: 767px) {
+    .contentImagesDesktop {
+        display: none;
+    }
+
 }
