@@ -5,28 +5,39 @@
 body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
+    background-color: #F5F5F5;
 }
 
-.headerContainer {}
+.container {
+    width: fit-content;
+    height: fit-content;
+}
 
 .headerBackgroundImage {
     background-image: url('./assests/background.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: inherit;
+    height: 650px;
 }
 
 .headerBackground {
-    background-color: #194D44;
+    background: linear-gradient(180deg, #194D41 0%, rgba(25, 77, 65, 0.7) 100%);
     height: inherit;
-    opacity: 0.9;
+    opacity: 0.93;
+    backdrop-filter: blur(4px)
 }
 
 .header {
     display: flex;
     gap: 325px;
-    padding: 20px 128px;
+    padding: 0px 128px;
+}
+
+.logo {
+    width: 226px;
+    height: 35px;
+    margin-top: 20px;
 }
 
 .nav {
@@ -34,10 +45,11 @@ body {
 }
 
 .nav-item {
-    margin: 10px 0px 0px 31px;
+    margin: 18px 0px 0px 28px;
     color: #93aba5;
     font-weight: 400;
     font-size: 14px;
+    line-height: 41px;
 }
 
 .active {
@@ -47,14 +59,427 @@ body {
 }
 
 .vertical-line {
-    margin: 10px 0px 0px 31px;
-    border: 1px solid #93aba5;
+    margin: 33px 0px 0px 31px;
+    border: 1px solid #EAEAEA;
     height: 14px;
 }
 
-.call {
-    margin: 10px 0px 0px 31px;
-    display: flex;
+.callNow {
+    margin: 20px 0px 0px 46px;
     font-size: 14px;
+    line-height: 41px;
     font-weight: 700;
+    color: #ffffff;
+}
+
+.highlight {
+    color: #57c1a8;
+}
+
+.headerContent {
+    display: flex;
+    padding: 0px 128px;
+    justify-content: space-between;
+}
+
+.customForm {
+    text-align: center;
+    background: linear-gradient(180deg, #2A7D6C 0%, rgba(62, 105, 96, 0.62) 100%);
+    box-shadow: 0px 10px 50px 0px #0000001F;
+    height: 449px;
+    width: 472px;
+    margin-top: 55px;
+    padding: 50px 28px;
+    border-radius: 12px;
+}
+
+.formHeader {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 100%;
+    color: #ffffff;
+}
+
+.inputGroups {
+    margin: 35px 0px;
+}
+
+.inputs {
+    display: flex;
+    margin: 18px 0px;
+    gap: 16px;
+}
+
+.inputField {
+    position: relative;
+    width: 200px;
+}
+
+.inputField input {
+    border: 1px solid #ffffff;
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 100%;
+    padding: 14px;
+    pointer-events: none;
+    border-radius: 4px;
+    width: 100%;
+    z-index: 2;
+}
+
+.inputField label {
+    color: #ffffff;
+    position: absolute;
+    left: 16px;
+    top: 14px;
+    transition: 0.2s ease all;
+}
+
+.inputField input:focus+label,
+.inputField input:not(:placeholder-shown)+label {
+    top: -8px;
+    left: 8px;
+    font-size: 14px;
+    line-height: 100%;
+    padding: 0 4px;
+    background: linear-gradient(180deg, #2A7D6C 0%, rgba(62, 105, 96, 0.62) 100%);
+}
+
+.inputField input:focus {
+    outline: none;
+    box-shadow: none;
+    border: 1px solid #ccc;
+    /* Or whatever border you want */
+}
+
+
+.selectInput {
+    border: 1px solid #ffffff;
+    background-color: inherit;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 14px;
+    border-radius: 2px;
+    width: 416px;
+    appearance: none;
+    background-image: url("./assests/Polygon.png");
+    background-repeat: no-repeat;
+    background-position: right 0.75em center;
+    background-size: 0.6em auto;
+}
+
+.submitBtn {
+    background-color: #5bc8af;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    width: 221px;
+    padding: 16px 60px;
+    margin: auto;
+}
+
+.arrow {
+    font-size: 18px;
+}
+
+.content {
+    border-radius: 8px;
+    margin-top: 165px;
+}
+
+.detail {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    width: 600px;
+    margin: 20px 0px;
+}
+
+.shadowBackground {
+    position: relative;
+    width: 100%;
+    top: -105px;
+}
+
+
+.whiteBackground {
+    top: 22px;
+    position: absolute;
+    left: 0;
+    height: auto
+}
+
+.MainContentDetail {
+    height: 640px;
+    padding: 0px 128px;
+    margin-top: -30px;
+}
+
+.contentImages {
+    display: flex;
+    gap: 36px;
+}
+
+.heading {
+    margin-top: 74px;
+    margin-bottom: 38px;
+}
+
+.detailContent {
+    display: flex;
+    gap: 36px;
+}
+
+.details {
+    width: 371px;
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.sucessRateBtn {
+    background-color: inherit;
+    color: #5bc8af;
+    border: 1px solid #5bc8af;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    width: 371px;
+    padding: 15px 90px;
+    margin: 10px 0px;
+}
+
+.peopleContent {
+    background-color: #ffffff;
+    padding-bottom: 80px;
+}
+
+.accordianBlock {
+    display: flex;
+    position: relative;
+    top: -50px;
+    margin: 0px 135px;
+}
+
+.accordianContent {
+    display: flex;
+    gap: 36px;
+    margin: 0px 65px;
+}
+
+.direction {
+    flex-grow: 0;
+}
+
+.accordianPara {
+    padding: 65px 70px;
+    width: 675px;
+    height: 269px;
+    background: #194D44;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: 0px 10px 30px 0px #0000001F;
+}
+
+.personImage {
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    box-shadow: 0px 10px 30px 0px #0000001F;
+}
+
+.personName {
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 34px;
+    color: #ffffff;
+}
+
+.quote {
+    position: relative;
+    top: -25px;
+    right: -10px;
+}
+
+.personComment {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+    font-style: italic;
+    margin: 0;
+}
+
+.dot-loader {
+    display: flex;
+    gap: 36px;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+}
+
+.accordianStatus {
+    width: 16px;
+    height: 16px;
+    background-color: #EAEAEA;
+    border-radius: 50%;
+}
+
+.activeAccordian {
+    background-color: #5BC8AF;
+}
+
+.horizontal-line {
+    flex-grow: 1;
+    height: 1px;
+    background-color: #eaeaea;
+    margin-left: 20px;
+    margin-top: 33px;
+}
+
+.contentHeading {
+    display: flex;
+    align-items: center
+}
+
+.peopleBlockData {
+    padding: 25px 128px 0px;
+}
+
+.italicPara {
+    width: 371px;
+    margin: 0;
+    font-style: italic;
+    font-size: 18px;
+    line-height: 28px;
+}
+
+.features {
+    padding: 0px 128px;
+}
+
+.featureButtonGroups {
+    display: flex;
+    gap: 36px;
+    margin: 36px 0px;
+}
+
+.featureButton {
+    background-color: inherit;
+    border: 1px solid #5bc8af;
+    color: #333333;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 28px;
+    align-items: center;
+    cursor: pointer;
+    width: 371px;
+    height: 96px;
+    padding: 0px 72px;
+}
+
+.videoBlock {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+}
+
+.videoImg {
+    position: absolute;
+    right: 0;
+    height: 648px;
+    object-fit: contain;
+}
+
+.videoBg {
+    position: absolute;
+    left: 20px;
+    z-index: 2;
+}
+
+.videoContent {
+    background: url('./assests/VideoBlockContenBg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 94px 128px;
+    z-index: 3;
+    width: 755px;
+}
+
+.points {
+    margin-top: 24px;
+}
+
+.point {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.checkmark {
+    height: 14px;
+    margin-top: 24px;
+}
+
+.pointContent {
+    width: 430px;
+}
+
+.pointHeading {
+    color: #ffffff;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+}
+
+.pointDetail {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+    color: #ffffff;
+    margin: 3px;
+}
+
+.playButton {
+    z-index: 5;
+    width: 208px;
+    height: 208px;
+    margin: auto;
+}
+
+.bottomLogo {
+    z-index: 5;
+    position: absolute;
+    right: 36px;
+    bottom: 36px;
+}
+
+.copyRightBlock {
+    padding: 38px 128px;
+    display: flex;
+    justify-content: space-between;
+    color: #757575;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
 }
