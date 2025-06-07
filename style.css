@@ -1,0 +1,60 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.headerContainer {}
+
+.headerBackgroundImage {
+    background-image: url('./assests/background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: inherit;
+}
+
+.headerBackground {
+    background-color: #194D44;
+    height: inherit;
+    opacity: 0.9;
+}
+
+.header {
+    display: flex;
+    gap: 325px;
+    padding: 20px 128px;
+}
+
+.nav {
+    display: flex;
+}
+
+.nav-item {
+    margin: 10px 0px 0px 31px;
+    color: #93aba5;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.active {
+    color: #fdfdfd;
+    text-decoration: underline;
+    font-weight: 700;
+}
+
+.vertical-line {
+    margin: 10px 0px 0px 31px;
+    border: 1px solid #93aba5;
+    height: 14px;
+}
+
+.call {
+    margin: 10px 0px 0px 31px;
+    display: flex;
+    font-size: 14px;
+    font-weight: 700;
+}
