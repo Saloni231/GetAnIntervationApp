@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Get An Intervention</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
@@ -35,17 +35,17 @@
                 </div>
               </div>
             </div>
+            <div class="nav-mobile-menu">
+              <img src="./assests/Nav.png" />
+            </div>
+            <div class="nav-mobile-close">
+              <img src="./assests/cross.svg" style="width: 20px" />
+            </div>
           </div>
           <div class="headerContent">
             <div class="content">
-              <img
-                class="desktopView"
-                src="./assests/GET AN INTERVENTION.png"
-              />
-              <img
-                class="mobileView"
-                src="./assests/GET AN INTERVENTION_mobile.png"
-              />
+              <div class="outlined-text-header">GET AN</div>
+              <div class="solid-text-header">INTERVENTION</div>
               <p class="detail">
                 Showing greater respect to older adults can be done in several
                 ways : acknowledging and putting to use the talents and skills
@@ -64,8 +64,12 @@
                       id="firstName"
                       name="firstName"
                       placeholder=" "
+                      onchange="handleInputChange('firstName')"
                     />
                     <label for="firstName">First Name</label>
+                    <div class="error-tooltip hide">
+                      This field can’t be empty.<br />Please fill it in.
+                    </div>
                   </div>
                   <div class="inputField">
                     <input
@@ -73,8 +77,12 @@
                       id="lastName"
                       name="lastName"
                       placeholder=" "
+                      onchange="handleInputChange('lastName')"
                     />
                     <label for="lastName">Last Name</label>
+                    <div class="error-tooltip hide">
+                      This field can’t be empty.<br />Please fill it in.
+                    </div>
                   </div>
                 </div>
                 <div class="inputs">
@@ -84,8 +92,12 @@
                       id="businessEmail"
                       name="businessEmail"
                       placeholder=" "
+                      onchange="handleInputChange('businessEmail')"
                     />
                     <label for="businessEmail">Business Email</label>
+                    <div class="error-tooltip hide">
+                      This field can’t be empty.<br />Please fill it in.
+                    </div>
                   </div>
                   <div class="inputField">
                     <input
@@ -93,16 +105,27 @@
                       id="company"
                       name="company"
                       placeholder=" "
+                      onchange="handleInputChange('company')"
                     />
                     <label for="company">Company</label>
+                    <div class="error-tooltip hide">
+                      This field can’t be empty.<br />Please fill it in.
+                    </div>
                   </div>
                 </div>
-                <select id="country" name="country" class="selectInput">
+                <select
+                  id="country"
+                  class="selectInput"
+                  onchange="handleInputChange('country')"
+                >
                   <option value="">Country</option>
                   <option value="india">India</option>
                   <option value="usa">United States</option>
                   <option value="uk">United Kingdom</option>
                 </select>
+                <div class="error-tooltip hide">
+                  This field can’t be empty.<br />Please fill it in.
+                </div>
               </div>
               <button class="submitBtn">
                 <span class="arrow"><img src="./assests/mdi_send.png" /></span>
@@ -132,7 +155,8 @@
           />
         </div>
         <div class="contentHeading">
-          <img src="./assests/WE UNDERSTAND.png" class="heading" />
+          <div class="outlined-text-subHeading">WE</div>
+          <div class="solid-text-subHeading">UNDERSTAND</div>
           <div class="horizontal-line"></div>
         </div>
         <div class="detailContent">
@@ -145,7 +169,7 @@
               Engaging them in leisure activities and volunteer work is
               important.
             </p>
-            <p class="details show-lg">
+            <p class="details show">
               Older adults want to stay active and contribute to society in a
               reciprocal manner (meaning that they want to exchange their
               services and skills with others for the mutual benefit of the
@@ -153,14 +177,14 @@
               published from 2005 to 2016 examining the social needs of older
               adults were eligible for inclusion.
             </p>
-            <p class="details hide-lg">
+            <p class="details hide">
               Older adults want to stay active and contribute to society in a
               reciprocal manner (meaning that they want to exchange their
               services and skills with others for the mutual benefit of the
               neighborhood or community).
             </p>
           </div>
-          <p class="details hide-lg">
+          <p class="details hide">
             Qualitative and quantitative studies published from 2005 to 2016
             examining the social needs of older adults were eligible for
             inclusion. To stimulate social contacts, neighborhood initiatives
@@ -173,7 +197,7 @@
               /></span>
             </button>
           </p>
-          <p class="details show-lg">
+          <p class="details show">
             To stimulate social contacts, neighborhood initiatives can be
             developed. Social meeting places, such as pubs and churches can help
             to foster the development of close and peripheral relationships.
@@ -187,37 +211,43 @@
       </div>
       <div class="peopleContent">
         <div class="accordianBlock">
-          <img src="./assests/back.svg" class="direction" />
+          <img src="./assests/back.svg" class="direction" id="prev" />
           <div class="accordianContent">
-            <img src="./assests/people_1_1440.png" class="personImage" />
+            <img class="personImage" />
             <div class="accordianPara">
               <div class="personName">
-                Abbie Harvey
                 <img src="./assests/quote.png" class="quote" />
               </div>
-              <p class="personComment">
-                I have been caring for my mom & dad off and on for about 10
-                years now, and I know the importance of me being there for
-                appointments. Older people need attention, love and care that
-                they truly deserve.
-              </p>
+              <p class="personComment"></p>
             </div>
           </div>
-          <img src="./assests/next.svg" class="direction" />
+          <img src="./assests/next.svg" class="direction" id="next" />
         </div>
         <div class="dot-loader">
-          <span class="accordianStatus activeAccordian"></span>
-          <span class="accordianStatus"></span>
-          <span class="accordianStatus"></span>
+          <span class="accordianStatus_0"></span>
+          <span class="accordianStatus_1"></span>
+          <span class="accordianStatus_2"></span>
         </div>
         <div class="peopleBlockData">
-          <div class="contentHeading">
-            <img
-              src="./assests/WE CAN ORGANIZE EVERYTHING.png"
-              class="heading"
-            />
-            <div class="horizontal-line"></div>
+          <!-- Single-line version -->
+          <div class="heading heading-one-line">
+            <span class="outlined">WE</span>
+            <span class="solid">CAN ORGANIZE EVERYTHING</span>
+            <hr />
           </div>
+
+          <!-- Two-line version -->
+          <div class="heading heading-two-line">
+            <div class="top-line">
+              <span class="outlined">WE</span>
+              <span class="solid">CAN ORGANIZE</span>
+            </div>
+            <div class="bottom-line">
+              <span class="solid">EVERYTHING</span>
+              <hr />
+            </div>
+          </div>
+
           <div class="peopleDetailContent">
             <p class="italicPara">
               <b> Interventions</b> should focus on older adult’s desire for
@@ -246,15 +276,19 @@
           <button class="featureButton">Needs Assesment</button>
           <button class="featureButton">Treatment Planning & Placement</button>
           <button class="featureButton">Transportation & Logistics</button>
-
           <button class="featureButton">Insurance Advocacy</button>
           <button class="featureButton">Employment Advocacy</button>
           <button class="featureButton">Aftercare Planning</button>
         </div>
       </div>
       <div class="videoBlock">
+        <!-- <img src="./assests/VideoBlockBG.png" class="videoShadow" />
+        <img src="./assests/VideoBlockContenBg.png" class="background-layer" /> -->
         <div class="videoContent">
-          <img src="./assests/WATCH THE VIDEO.png" />
+          <div class="contentHeadingVideo">
+            <div class="outlined-text-video">WATCH</div>
+            <div class="solid-text-video">THE VIDEO</div>
+          </div>
           <div class="points">
             <div class="point">
               <img src="./assests/Checkmark.svg" class="checkmark" />
@@ -289,19 +323,13 @@
             </div>
           </div>
         </div>
-        <img src="./assests/VideoBlockBG.png" class="videoBg" />
-        <img src="./assests/playbutton.png" class="playButton" />
-        <img src="./assests/background.png" class="videoImg" />
-        <img
-          src="./assests/Vector.png"
-          alt="Get An Intervention"
-          class="bottomLogo"
-        />
       </div>
+
       <div class="copyRightBlock">
         <div>@2021 Get an Intervention Inc. All rights reserved.</div>
         <div>Privacy Policy | Terms of use | Site Map</div>
       </div>
     </div>
+    <script src="script.js" defer></script>
   </body>
 </html>
