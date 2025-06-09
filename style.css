@@ -59,6 +59,7 @@ video:fullscreen {
     border: none;
     font-size: 48px;
     cursor: pointer;
+    color: #ffffff;
     background: transparent;
 }
 
@@ -143,6 +144,7 @@ video:fullscreen {
 }
 
 .outlined-text-header {
+    margin-bottom: 10px;
     font: caption;
     font-size: 64px;
     font-weight: 700;
@@ -230,6 +232,7 @@ video:fullscreen {
 
 .top-line,
 .bottom-line {
+    width: 100%;
     display: flex;
     align-items: center;
     gap: 12px;
@@ -716,15 +719,16 @@ video:fullscreen {
     bottom: -90px;
     left: 50%;
     transform: translateX(-50%);
-    width: 100%;
+    width: 80%;
     background-color: #297C6B;
     color: #fff;
     padding: 12px 16px;
     border-radius: 8px;
-    font-size: 0.85rem;
-    line-height: 1.4;
+    font-size: 13.5px;
+    font-weight: 400;
+    line-height: 20px;
     z-index: 100;
-    text-align: center;
+    text-align: left;
 }
 
 .tooltip::after {
@@ -765,7 +769,7 @@ video:fullscreen {
     height: 200px;
     position: absolute;
     z-index: 5;
-    top: 55%;
+    top: 51%;
     left: 35%;
     margin: 0;
     cursor: pointer;
@@ -838,7 +842,7 @@ video:fullscreen {
     font-size: 24px;
     line-height: 32px;
     font-weight: 700;
-    margin: 0 0 4px;
+    margin: 0 0 8px;
 }
 
 .pointDetail {
@@ -884,6 +888,14 @@ video:fullscreen {
     display: flex;
     gap: 36px;
     justify-content: space-evenly;
+}
+
+.hide-lg {
+    display: none;
+}
+
+.show-lg {
+    display: block;
 }
 
 @media (max-width: 991px) {
@@ -953,6 +965,7 @@ video:fullscreen {
 
     .sucessRateBtn {
         margin-top: 36px;
+        padding: 15px 68px;
     }
 
     .chevron-right,
@@ -1036,6 +1049,7 @@ video:fullscreen {
     .personName {
         font-size: 18px;
         line-height: 28px;
+        margin-bottom: 8px;
     }
 
     .personComment {
@@ -1051,6 +1065,30 @@ video:fullscreen {
 
     .contentImagesDesktop {
         gap: 16px;
+    }
+
+    .bottomLogo {
+        right: 35%;
+    }
+
+    .points {
+        margin-top: 64px;
+    }
+
+    .pointContent {
+        max-width: 100%;
+    }
+
+    .videoBackground {
+        height: 500px;
+    }
+
+    .hide-lg {
+        display: block;
+    }
+
+    .show-lg {
+        display: none;
     }
 }
 
@@ -1221,6 +1259,14 @@ video:fullscreen {
         gap: 16px;
     }
 
+    .hide-lg {
+        display: none;
+    }
+
+    .show-lg {
+        display: block;
+    }
+
 }
 
 @media (max-width: 560px) {
@@ -1239,7 +1285,7 @@ video:fullscreen {
 
     .MainContentDetail {
         margin-top: -150px;
-        height: 965px
+        margin-bottom: 180px;
     }
 
     .accordianBlock {
@@ -1267,8 +1313,9 @@ video:fullscreen {
     }
 
     .quote {
+        width: 67px;
         position: absolute;
-        top: 85px;
+        top: 65px;
         right: 24px;
     }
 
@@ -1301,7 +1348,7 @@ video:fullscreen {
         height: 128px;
         position: absolute;
         z-index: 5;
-        top: 72%;
+        top: 71%;
         left: 30%;
         margin: 0;
     }
@@ -1330,5 +1377,30 @@ video:fullscreen {
         line-height: 32px;
     }
 
+    .submitBtn {
+        width: auto;
+        padding: 16px 103px;
+        margin: 0px;
+    }
+
+    .pointContent {
+        max-width: 100%;
+    }
+
+    .bottomLogo {
+        right: 65px;
+    }
+
+    .videoBackground {
+        height: 280px;
+    }
+
+    .points {
+        margin-top: 36px;
+    }
+
+    .personName {
+        margin: 16px 0px;
+    }
 
 }

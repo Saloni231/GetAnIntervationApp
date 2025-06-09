@@ -118,6 +118,14 @@ submitBtn.addEventListener("click", function () {
     return;
   }
 
+  document.getElementById("firstName").value = "";
+  document.getElementById("lastName").value = "";
+  document.getElementById("businessEmail").value = "";
+  document.getElementById("company").value = "";
+  document.getElementById("country").value = "";
+  document.querySelector(`#businessEmail ~ .error-tooltip`).textContent =
+    "This field can’t be empty.\nPlease fill it in.";
+
   window.open("thankYou.html", "_blank");
 });
 
