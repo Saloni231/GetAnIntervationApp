@@ -33,6 +33,13 @@ let personName = document.createTextNode(accordianData[0].name);
 const img = personNameDiv.querySelector("img");
 const personComment = document.querySelector(".personComment");
 
+const accodianBlock = document.querySelector(".accordianBlock");
+let startX = 0;
+let isTouching = false;
+
+const modal = document.querySelector(".videoModal");
+const video = document.getElementById("video");
+
 closeIcon.style.display = "none";
 
 const handleAccordianContentChange = () => {
@@ -46,33 +53,12 @@ const handleAccordianContentChange = () => {
   personComment.textContent = accordianData[currentState].comment;
 };
 
-window.onload = function () {
-  document.querySelector(
-    `.accordianStatus_${currentState}`
-  ).style.backgroundColor = "#5BC8AF";
-  personImage.src = accordianData[0].image;
-  personNameDiv.insertBefore(personName, img);
-  personComment.textContent = accordianData[0].comment;
-  currentState++;
-
-  setInterval(() => {
-    handleAccordianContentChange();
-    if (currentState > 0 && currentState < 3) {
-      const prev = currentState - 1;
-      document.querySelector(`.accordianStatus_${prev}`).style.backgroundColor =
-        "#EAEAEA";
-      if (currentState === 2) {
-        currentState = 0;
-      } else {
-        currentState++;
-      }
-    } else if (currentState === 0) {
-      document.querySelector(`.accordianStatus_2`).style.backgroundColor =
-        "#EAEAEA";
-      currentState++;
-    }
-  }, 10000);
-};
+document.querySelector(
+  `.accordianStatus_${currentState}`
+).style.backgroundColor = "#5BC8AF";
+personImage.src = accordianData[0].image;
+personNameDiv.insertBefore(personName, img);
+personComment.textContent = accordianData[0].comment;
 
 menuIcon.addEventListener("click", function () {
   closeIcon.style.display = "block";
@@ -94,20 +80,6 @@ const handleErrors = (id) => {
   document.querySelector(`#${id} + label`).style.color = "#ff7777";
 };
 
-submitBtn.addEventListener("click", function () {
-  if (document.getElementById("firstName").value === "") {
-    handleErrors("firstName");
-  } else if (document.getElementById("lastName").value === "") {
-    handleErrors("lastName");
-  } else if (document.getElementById("businessEmail").value === "") {
-    handleErrors("businessEmail");
-  } else if (document.getElementById("company").value === "") {
-    handleErrors("company");
-  } else if (document.getElementById("country").value === "") {
-    handleErrors("country");
-  }
-});
-
 const handleInputChange = (id) => {
   const value = document.getElementById(id).value;
   if (value !== "") {
@@ -116,6 +88,38 @@ const handleInputChange = (id) => {
     document.querySelector(`#${id} + label`).style.color = "#ffffff";
   }
 };
+
+submitBtn.addEventListener("click", function () {
+  if (document.getElementById("firstName").value === "") {
+    handleErrors("firstName");
+    return;
+  } else if (document.getElementById("lastName").value === "") {
+    handleErrors("lastName");
+    return;
+  } else if (document.getElementById("businessEmail").value === "") {
+    handleErrors("businessEmail");
+    document.querySelector(`#businessEmail ~ .error-tooltip`).textContent =
+      "This field can’t be empty.\nPlease fill it in.";
+    return;
+  } else if (document.getElementById("company").value === "") {
+    handleErrors("company");
+    return;
+  } else if (document.getElementById("country").value === "") {
+    handleErrors("country");
+    return;
+  }
+
+  const email = document.getElementById("businessEmail").value;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    handleErrors("businessEmail");
+    document.querySelector(`#businessEmail ~ .error-tooltip`).textContent =
+      "Please enter a valid email address";
+    return;
+  }
+
+  window.open("thankYou.html", "_blank");
+});
 
 document.getElementById("prev").addEventListener("click", function () {
   document.querySelector(
@@ -140,3 +144,54 @@ document.getElementById("next").addEventListener("click", function () {
   }
   handleAccordianContentChange();
 });
+
+accodianBlock.addEventListener("touchstart", (e) => {
+  isTouching = true;
+  startX = e.touches[0].clientX;
+});
+
+accodianBlock.addEventListener("touchmove", (e) => {
+  if (!isTouching) return;
+  const currentX = e.touches[0].clientX;
+  const diffX = currentX - startX;
+
+  if (Math.abs(diffX) > 30) {
+    if (diffX > 0) {
+      document.querySelector(
+        `.accordianStatus_${currentState}`
+      ).style.backgroundColor = "#EAEAEA";
+      if (currentState === 0) {
+        currentState = 2;
+      } else {
+        currentState--;
+      }
+      handleAccordianContentChange();
+    } else {
+      document.querySelector(
+        `.accordianStatus_${currentState}`
+      ).style.backgroundColor = "#EAEAEA";
+      if (currentState === 2) {
+        currentState = 0;
+      } else {
+        currentState++;
+      }
+      handleAccordianContentChange();
+    }
+    isTouching = false;
+  }
+});
+
+accodianBlock.addEventListener("touchend", () => {
+  isTouching = false;
+});
+
+const handleOpen = () => {
+  modal.style.display = "flex";
+  video.play();
+};
+
+const handleClose = () => {
+  modal.style.display = "none";
+  video.pause();
+  video.currentTime = 0;
+};

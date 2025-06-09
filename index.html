@@ -12,6 +12,14 @@
   </head>
   <body>
     <div class="container">
+      <div class="videoModal">
+        <div class="modalContent">
+          <button class="closeBtn" onclick="handleClose()">&times;</button>
+          <video id="video" loop controls>
+            <source src="./assests/video.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
       <div class="headerBackgroundImage">
         <div class="headerBackground">
           <div class="header">
@@ -378,7 +386,11 @@
           </div>
         </div>
         <img src="./assests/VideoBlockBG.png" class="videoBg" />
-        <img src="./assests/playbutton.png" class="playButton" />
+        <img
+          src="./assests/playbutton.png"
+          class="playButton"
+          onclick="handleOpen()"
+        />
         <img
           src="./assests/Vector.png"
           alt="Get An Intervention"
@@ -429,8 +441,12 @@
             </div>
           </div>
         </div>
-        <img src="./assests/background.png" />
-        <img src="./assests/playbutton.png" class="playButton" />
+        <img src="./assests/background.png" class="video" />
+        <img
+          src="./assests/playbutton.png"
+          class="playButton"
+          onclick="handleOpen()"
+        />
         <img
           src="./assests/Vector.png"
           alt="Get An Intervention"
