@@ -242,8 +242,8 @@ video:fullscreen {
 .bottom-line hr {
     flex: 1 1 auto;
     min-width: 50px;
-    height: 2px;
-    background-color: #ddd;
+    height: 1px;
+    background-color: #eaeaea;
     border: none;
 }
 
@@ -659,6 +659,7 @@ video:fullscreen {
 }
 
 .peopleBlockData {
+    margin-top: 75px;
     padding: 25px 128px 0px;
 }
 
@@ -690,7 +691,7 @@ video:fullscreen {
     max-width: 371px;
     min-width: 328px;
     height: 96px;
-    padding: 0px 54px;
+    padding: 0px 30px 0px 54px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -801,6 +802,18 @@ video:fullscreen {
 
 .videoBg {
     position: absolute;
+}
+
+.videoBg768 {
+    position: absolute;
+    top: 30px;
+    display: none;
+}
+
+.videoBg360 {
+    position: absolute;
+    top: 80px;
+    display: none;
 }
 
 .playButton {
@@ -926,6 +939,7 @@ video:fullscreen {
     }
 
     .detail {
+        max-width: 560px;
         font-size: 18px;
         line-height: 28px;
     }
@@ -1089,6 +1103,10 @@ video:fullscreen {
 
     .show-lg {
         display: none;
+    }
+
+    .videoBg768 {
+        display: block;
     }
 }
 
@@ -1267,6 +1285,14 @@ video:fullscreen {
         display: block;
     }
 
+    .videoBg768 {
+        display: none;
+    }
+
+    .videoBg360 {
+        display: block;
+    }
+
 }
 
 @media (max-width: 560px) {
@@ -1401,6 +1427,18 @@ video:fullscreen {
 
     .personName {
         margin: 16px 0px;
+    }
+
+    .peopleBlockData {
+        margin-top: 60px;
+    }
+
+    .videoBg768 {
+        display: none;
+    }
+
+    .videoBg360 {
+        display: block;
     }
 
 }
