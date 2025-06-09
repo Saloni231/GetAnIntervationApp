@@ -211,7 +211,7 @@
       </div>
       <div class="peopleContent">
         <div class="accordianBlock">
-          <img src="./assests/back.svg" class="direction" id="prev" />
+          <div class="chevron-left" id="prev"></div>
           <div class="accordianContent">
             <img class="personImage" />
             <div class="accordianPara">
@@ -221,7 +221,7 @@
               <p class="personComment"></p>
             </div>
           </div>
-          <img src="./assests/next.svg" class="direction" id="next" />
+          <div class="chevron-right" id="next"></div>
         </div>
         <div class="dot-loader">
           <span class="accordianStatus_0"></span>
@@ -229,14 +229,11 @@
           <span class="accordianStatus_2"></span>
         </div>
         <div class="peopleBlockData">
-          <!-- Single-line version -->
           <div class="heading heading-one-line">
             <span class="outlined">WE</span>
             <span class="solid">CAN ORGANIZE EVERYTHING</span>
             <hr />
           </div>
-
-          <!-- Two-line version -->
           <div class="heading heading-two-line">
             <div class="top-line">
               <span class="outlined">WE</span>
@@ -273,17 +270,69 @@
           </div>
         </div>
         <div class="features">
-          <button class="featureButton">Needs Assesment</button>
-          <button class="featureButton">Treatment Planning & Placement</button>
-          <button class="featureButton">Transportation & Logistics</button>
-          <button class="featureButton">Insurance Advocacy</button>
-          <button class="featureButton">Employment Advocacy</button>
-          <button class="featureButton">Aftercare Planning</button>
+          <button class="featureButton">
+            Needs Assesment<img
+              class="info-icon"
+              src="./assests/info-icon.png"
+            />
+            <div class="tooltip">
+              We’re experienced in our individual crafts and understand how each
+              one of our roles impacts your plan holistically.
+            </div>
+          </button>
+          <button class="featureButton">
+            Treatment Planning & Placement<img
+              class="info-icon"
+              src="./assests/info-icon.png"
+            />
+            <div class="tooltip">
+              We’re experienced in our individual crafts and understand how each
+              one of our roles impacts your plan holistically.
+            </div>
+          </button>
+          <button class="featureButton">
+            Transportation & Logistics<img
+              class="info-icon"
+              src="./assests/info-icon.png"
+            />
+            <div class="tooltip">
+              We’re experienced in our individual crafts and understand how each
+              one of our roles impacts your plan holistically.
+            </div>
+          </button>
+          <button class="featureButton">
+            Insurance Advocacy<img
+              class="info-icon"
+              src="./assests/info-icon.png"
+            />
+            <div class="tooltip">
+              We’re experienced in our individual crafts and understand how each
+              one of our roles impacts your plan holistically.
+            </div>
+          </button>
+          <button class="featureButton">
+            Employment Advocacy<img
+              class="info-icon"
+              src="./assests/info-icon.png"
+            />
+            <div class="tooltip">
+              We’re experienced in our individual crafts and understand how each
+              one of our roles impacts your plan holistically.
+            </div>
+          </button>
+          <button class="featureButton">
+            Aftercare Planning<img
+              class="info-icon"
+              src="./assests/info-icon.png"
+            />
+            <div class="tooltip">
+              We’re experienced in our individual crafts and understand how each
+              one of our roles impacts your plan holistically.
+            </div>
+          </button>
         </div>
       </div>
       <div class="videoBlock">
-        <!-- <img src="./assests/VideoBlockBG.png" class="videoShadow" />
-        <img src="./assests/VideoBlockContenBg.png" class="background-layer" /> -->
         <div class="videoContent">
           <div class="contentHeadingVideo">
             <div class="outlined-text-video">WATCH</div>
@@ -291,7 +340,64 @@
           </div>
           <div class="points">
             <div class="point">
+              <img
+                src="./assests/Checkmark.svg"
+                class="checkmark"
+                alt="checkmark"
+              />
+              <div class="pointContent">
+                <h1 class="pointHeading">Needs Assessment</h1>
+                <p class="pointDetail">
+                  The Advocacy Evaluation Toolkit contains the instruments used
+                  to collect data for evaluating the Consumer Voices for
+                  Coverage program.
+                </p>
+              </div>
+            </div>
+
+            <div class="point">
               <img src="./assests/Checkmark.svg" class="checkmark" />
+              <div class="pointContent">
+                <h1 class="pointHeading">Insurance Advocacy</h1>
+                <p class="pointDetail">
+                  We are committed to advocating for appropriate coverage and
+                  payment policies.
+                </p>
+              </div>
+            </div>
+            <div class="point">
+              <img src="./assests/Checkmark.svg" class="checkmark" />
+              <div class="pointContent">
+                <h1 class="pointHeading">Treatment Planning & Placement</h1>
+                <p class="pointDetail">
+                  Patients can better understand medical procedures, discharge
+                  instructions, etc.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <img src="./assests/VideoBlockBG.png" class="videoBg" />
+        <img src="./assests/playbutton.png" class="playButton" />
+        <img
+          src="./assests/Vector.png"
+          alt="Get An Intervention"
+          class="bottomLogo"
+        />
+      </div>
+      <div class="videoBlockMobile">
+        <div class="videoContentMobile">
+          <div class="contentHeadingVideo">
+            <div class="outlined-text-video">WATCH</div>
+            <div class="solid-text-video">THE VIDEO</div>
+          </div>
+          <div class="points">
+            <div class="point">
+              <img
+                src="./assests/Checkmark.svg"
+                class="checkmark"
+                alt="checkmark"
+              />
               <div class="pointContent">
                 <h1 class="pointHeading">Needs Assessment</h1>
                 <p class="pointDetail">
@@ -323,8 +429,14 @@
             </div>
           </div>
         </div>
+        <img src="./assests/background.png" />
+        <img src="./assests/playbutton.png" class="playButton" />
+        <img
+          src="./assests/Vector.png"
+          alt="Get An Intervention"
+          class="bottomLogo"
+        />
       </div>
-
       <div class="copyRightBlock">
         <div>@2021 Get an Intervention Inc. All rights reserved.</div>
         <div>Privacy Policy | Terms of use | Site Map</div>

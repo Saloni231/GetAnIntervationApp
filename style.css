@@ -67,7 +67,7 @@ body {
 }
 
 .vertical-line {
-    margin: 33px 0px 0px 31px;
+    margin: 13px 0px 0px 31px;
     border: 1px solid #EAEAEA;
     height: 14px;
 }
@@ -352,6 +352,19 @@ body {
     width: 221px;
     padding: 16px 60px;
     margin: auto;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0px 4px 6px 0px #00000014;
+}
+
+.submitBtn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0px 8px 6px 0px #00000014;
+}
+
+.submitBtn:active {
+    transform: translateY(1px);
+    box-shadow: 0px 4px 6px 0px #00000014;
+    background-color: #35BB9C;
 }
 
 .arrow {
@@ -373,6 +386,7 @@ body {
 }
 
 .shadowBackground {
+    overflow: hidden;
     position: relative;
     width: 100%;
     top: -105px;
@@ -390,7 +404,7 @@ body {
 }
 
 .MainContentDetail {
-    height: 640px;
+    min-height: 640px;
     padding: 0px 128px;
     margin-top: -30px;
 }
@@ -437,7 +451,7 @@ body {
 .sucessRateBtn {
     background-color: inherit;
     color: #5bc8af;
-    border: 1px solid #5bc8af;
+    border: 2px solid #5bc8af;
     border-radius: 6px;
     font-size: 18px;
     font-weight: 700;
@@ -450,6 +464,17 @@ body {
     min-width: 328px;
     padding: 15px 90px;
     margin: 10px 0px;
+    box-shadow: 0px 4px 6px 0px #00000014;
+}
+
+.sucessRateBtn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0px 8px 6px 0px #00000014;
+}
+
+.sucessRateBtn:active {
+    transform: translateY(1px);
+    box-shadow: 0px 4px 6px 0px #00000014;
 }
 
 .peopleContent {
@@ -462,6 +487,7 @@ body {
     position: relative;
     top: -50px;
     margin: 0px 135px;
+    align-items: center;
 }
 
 .accordianContent {
@@ -470,8 +496,32 @@ body {
     margin: 0px 65px;
 }
 
-.direction {
-    flex-grow: 0;
+.chevron-right {
+    width: 25px;
+    height: 25px;
+    border-right: 4px solid #e6e6e6;
+    border-bottom: 4px solid #e6e6e6;
+    transform: rotate(-45deg);
+    margin: 10px;
+}
+
+.chevron-left {
+    width: 25px;
+    height: 25px;
+    border-right: 4px solid #e6e6e6;
+    border-bottom: 4px solid #e6e6e6;
+    transform: rotate(135deg);
+    margin: 10px;
+}
+
+.chevron-left:hover {
+    border-right: 4px solid #5BC8AF;
+    border-bottom: 4px solid #5BC8AF;
+}
+
+.chevron-right:hover {
+    border-right: 4px solid #5BC8AF;
+    border-bottom: 4px solid #5BC8AF;
 }
 
 .accordianPara {
@@ -581,38 +631,129 @@ body {
     font-size: 18px;
     font-weight: 700;
     line-height: 28px;
-    align-items: center;
     cursor: pointer;
     max-width: 371px;
     min-width: 328px;
     height: 96px;
-    padding: 0px 70px;
+    padding: 0px 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    position: relative;
+}
+
+.info-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    opacity: 0;
+}
+
+.featureButton:hover .info-icon {
+    opacity: 1;
+}
+
+.featureButton:hover {
+    color: #5bc8af;
+}
+
+.tooltip {
+    display: none;
+    position: absolute;
+    bottom: -90px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    background-color: #297C6B;
+    color: #fff;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    z-index: 100;
+    text-align: center;
+}
+
+.tooltip::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent transparent #297C6B transparent;
+}
+
+.featureButton:hover .tooltip {
+    display: block;
 }
 
 .videoBlock {
-    background-image: url('./assests/background.png');
+    position: relative;
+    display: flex;
+    background: url('./assests/background.png');
+    background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-    height: 650px;
-    display: flex;
-    justify-content: left;
+    width: 100%;
+    height: 100%;
 }
 
-.background-layer {
-    position: absolute;
-    left: 0px;
-    top: 0;
+.videoBlockMobile {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    position: relative;
 }
+
+.videoBlockMobile .playButton {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    z-index: 5;
+    top: 55%;
+    left: 35%;
+    margin: 0;
+}
+
+.videoContentMobile {
+    flex: 1;
+    margin-bottom: -70px;
+    height: max-content;
+    background: url(./assests/VideoBackground_768.png);
+    padding: 102px 48px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 5;
+}
+
+.videoContentMobile .contentHeadingVideo {
+    margin: 0px 128px;
+}
+
 
 .videoContent {
+    flex: 1;
     padding: 90px 128px;
+    background: url('./assests/VideoBlockContenBg.png');
+    background-repeat: no-repeat;
+    z-index: 2;
 }
 
-.videoShadow {
+.videoBg {
     position: absolute;
-    left: 20px;
-    top: 0;
+}
+
+.playButton {
+    flex: 1;
+    margin: 220px;
+    flex-grow: 0;
+}
+
+.playButton:hover {
+    transform: scale(1.2);
 }
 
 .points {
@@ -621,16 +762,21 @@ body {
 
 .point {
     display: flex;
-    gap: 24px;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 24px;
 }
 
 .checkmark {
-    height: 14px;
-    margin-top: 24px;
+    height: 20px;
+    width: 20px;
+    flex-shrink: 0;
+    margin-top: 6px;
 }
 
 .pointContent {
-    width: 430px;
+    max-width: 80%;
+    flex: 1;
 }
 
 .pointHeading {
@@ -638,6 +784,7 @@ body {
     font-size: 24px;
     line-height: 32px;
     font-weight: 700;
+    margin: 0 0 4px;
 }
 
 .pointDetail {
@@ -645,14 +792,7 @@ body {
     font-weight: 400;
     line-height: 28px;
     color: #ffffff;
-    margin: 3px;
-}
-
-.playButton {
-    z-index: 5;
-    width: 208px;
-    height: 208px;
-    margin: auto;
+    margin: 0;
 }
 
 .bottomLogo {
@@ -750,7 +890,6 @@ body {
     .MainContentDetail {
         height: 768px;
         padding: 0px 24px;
-        margin-top: -30px;
     }
 
     .desktopViewDetails {
@@ -758,19 +897,12 @@ body {
         gap: 20px;
     }
 
-    .hide-lg {
-        display: block;
-    }
-
-    .show-lg {
-        display: none;
-    }
-
     .sucessRateBtn {
         margin-top: 36px;
     }
 
-    .direction {
+    .chevron-right,
+    .chevron-left {
         display: none;
     }
 
@@ -831,7 +963,11 @@ body {
     }
 
     .videoBlock {
-        justify-content: center;
+        display: none;
+    }
+
+    .videoBlockMobile {
+        display: flex;
     }
 
     .videoContent {
@@ -852,12 +988,20 @@ body {
         font-size: 14px;
         line-height: 24px;
     }
+
+    .copyRightBlock {
+        text-align: center;
+        flex-direction: column;
+        padding: 16px 128px;
+    }
+
+    .contentImagesDesktop {
+        gap: 16px;
+    }
 }
 
-@media (max-width: 767px) {
-    .contentImagesDesktop {
-        display: none;
-    }
+@media (max-width: 715px) {
+
 
     .headerBackground {
         padding: 14px 16px 140px;
@@ -923,41 +1067,24 @@ body {
         height: 24px;
     }
 
-    .hide-lg {
-        display: none;
-    }
-
-    .show-lg {
-        display: block;
-    }
-
     .MainContentDetail {
-        margin-top: -150px;
-        margin-bottom: 100px;
         padding: 0px 16px;
+        margin-top: -134px;
     }
 
     .detailContent {
         flex-direction: column;
     }
 
-    .accordianBlock {
-        top: 0;
-        margin: 0px 16px;
-    }
-
-    .accordianPara {
-        padding: 130px 30px 30px;
-        width: 328px;
-        border-radius: 20px;
-    }
-
     .italicPara {
-        width: 371px;
+        max-width: 371px;
+    }
+
+    .details {
+        width: auto;
     }
 
     .features {
-        padding: 0px 24px;
         gap: 16px;
         grid-template-columns: repeat(1, 1fr);
     }
@@ -981,12 +1108,108 @@ body {
         line-height: 24px;
     }
 
+    .heading-one-line {
+        display: none;
+    }
+
+    .heading-two-line {
+        display: flex;
+    }
+
+    .outlined-text-video,
+    .solid-text-video {
+        font-size: 36px;
+        line-height: 48px;
+    }
+
+    .pointHeading {
+        font-size: 18px;
+        line-height: 24px;
+    }
+
+    .pointDetail {
+        font-size: 18px;
+        line-height: 24px;
+    }
+
+    .point {
+        gap: 16px;
+    }
+
+    .videoContent {
+        padding: 80px 16px;
+        width: 100%;
+    }
+
+    .contentHeadingVideo {
+        flex-direction: column;
+    }
+
+    .peopleBlockData {
+        padding: 25px 16px 0px;
+    }
+
+    .copyRightBlock {
+        padding: 34px 31px;
+        font-size: 12px;
+        line-height: 22px;
+    }
+
+    .contentImagesDesktop {
+        display: none;
+    }
+
+    .accordianBlock {
+        margin: 0px 16px;
+    }
+
+    .accordianContent {
+        gap: 16px;
+    }
+
+}
+
+@media (max-width: 560px) {
+
+    .contentImagesDesktop {
+        display: none;
+    }
+
+    .greyBackground {
+        transform: scaleX(3) translateX(33%);
+    }
+
+    .whiteBackground {
+        transform: scaleX(3) translateX(33%);
+    }
+
+    .MainContentDetail {
+        margin-top: -150px;
+        height: 965px
+    }
+
+    .accordianBlock {
+        top: 0;
+        margin: 0px 16px;
+    }
+
+    .accordianPara {
+        padding: 130px 30px 30px;
+        width: 328px;
+        border-radius: 20px;
+    }
+
     .personImage {
+        border-radius: 20px;
         width: 180px;
         height: 180px;
         position: absolute;
         top: -60px;
         left: 24px;
+    }
+
+    .accordianContent {
+        position: relative;
     }
 
     .quote {
@@ -995,16 +1218,38 @@ body {
         right: 24px;
     }
 
-    .accordianContent {
-        position: relative;
+    .features {
+        padding: 0px 16px;
     }
 
-    .heading-one-line {
-        display: none;
+    .dot-loader {
+        margin-top: 36px;
     }
 
-    .heading-two-line {
-        display: flex;
+    .videoContentMobile {
+        background: url('./assests/VideoBackground_360.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 80px 16px 150px;
+    }
+
+    .videoContentMobile .contentHeadingVideo {
+        margin: 0px;
+    }
+
+    .pointDetail {
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    .videoBlockMobile .playButton {
+        width: 128px;
+        height: 128px;
+        position: absolute;
+        z-index: 5;
+        top: 78%;
+        left: 30%;
+        margin: 0;
     }
 
 }
