@@ -42,7 +42,15 @@ const video = document.getElementById("video");
 
 closeIcon.style.display = "none";
 
+const resetState = () => {
+  for (let i = 0; i < 3; i++) {
+    document.querySelector(`.accordianStatus_${i}`).style.backgroundColor =
+      "#EAEAEA";
+  }
+};
+
 const handleAccordianContentChange = () => {
+  resetState();
   document.querySelector(
     `.accordianStatus_${currentState}`
   ).style.backgroundColor = "#5BC8AF";
@@ -52,6 +60,11 @@ const handleAccordianContentChange = () => {
   personNameDiv.insertBefore(personName, img);
   personComment.textContent = accordianData[currentState].comment;
 };
+
+const handleDotLoader = (state) => {
+  currentState = state;
+  handleAccordianContentChange();
+}
 
 document.querySelector(
   `.accordianStatus_${currentState}`
@@ -130,9 +143,6 @@ submitBtn.addEventListener("click", function () {
 });
 
 document.getElementById("prev").addEventListener("click", function () {
-  document.querySelector(
-    `.accordianStatus_${currentState}`
-  ).style.backgroundColor = "#EAEAEA";
   if (currentState === 0) {
     currentState = 2;
   } else {
@@ -142,9 +152,6 @@ document.getElementById("prev").addEventListener("click", function () {
 });
 
 document.getElementById("next").addEventListener("click", function () {
-  document.querySelector(
-    `.accordianStatus_${currentState}`
-  ).style.backgroundColor = "#EAEAEA";
   if (currentState === 2) {
     currentState = 0;
   } else {
@@ -165,9 +172,6 @@ accodianBlock.addEventListener("touchmove", (e) => {
 
   if (Math.abs(diffX) > 30) {
     if (diffX > 0) {
-      document.querySelector(
-        `.accordianStatus_${currentState}`
-      ).style.backgroundColor = "#EAEAEA";
       if (currentState === 0) {
         currentState = 2;
       } else {
@@ -175,9 +179,6 @@ accodianBlock.addEventListener("touchmove", (e) => {
       }
       handleAccordianContentChange();
     } else {
-      document.querySelector(
-        `.accordianStatus_${currentState}`
-      ).style.backgroundColor = "#EAEAEA";
       if (currentState === 2) {
         currentState = 0;
       } else {
@@ -195,6 +196,14 @@ accodianBlock.addEventListener("touchend", () => {
 
 const handleOpen = () => {
   modal.style.display = "flex";
+  // Save current scroll position
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+  // Lock scroll
+  window.onscroll = function () {
+    window.scrollTo(scrollLeft, scrollTop);
+  };
   video.play();
 };
 
@@ -202,4 +211,11 @@ const handleClose = () => {
   modal.style.display = "none";
   video.pause();
   video.currentTime = 0;
+  window.onscroll = null;
+};
+
+window.onclick = function (e) {
+  if (e.target === modal) {
+    handleClose();
+  }
 };
