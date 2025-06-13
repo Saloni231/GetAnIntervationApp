@@ -252,8 +252,8 @@ video:fullscreen {
   transition: 0.2s ease all;
 }
 
-.inputField input:focus + label,
-.inputField input:not(:placeholder-shown) + label {
+.inputField input:focus+label,
+.inputField input:not(:placeholder-shown)+label {
   top: -8px;
   left: 8px;
   font-size: 14px;
@@ -293,6 +293,10 @@ video:fullscreen {
   border-color: transparent transparent #ff7777 transparent;
 }
 
+.selectField {
+  position: relative;
+}
+
 .selectInput {
   border: 1px solid #ffffff;
   background-color: rgba(62, 105, 96, 0.62);
@@ -301,7 +305,7 @@ video:fullscreen {
   font-weight: 400;
   padding: 14px;
   border-radius: 2px;
-  width: 416px;
+  width: 100%;
   appearance: none;
   background-image: url("./assests/Polygon.png");
   background-repeat: no-repeat;
@@ -310,13 +314,32 @@ video:fullscreen {
 }
 
 .selectInput option {
-  background-color: inherit;
+  background-color: rgba(62, 105, 96, 0.95);
+  color: #eaeaea;
 }
 
 .selectInput:focus {
   outline: none;
   box-shadow: none;
   border: 1px solid #ccc;
+}
+
+.selectField label {
+  color: #ffffff;
+  position: absolute;
+  left: 16px;
+  top: 14px;
+  transition: 0.2s ease all;
+}
+
+.selectInput:focus+label,
+.selectInput[value]:not([value=""])+label {
+  top: -8px;
+  left: 8px;
+  font-size: 14px;
+  line-height: 100%;
+  padding: 0 4px;
+  background: linear-gradient(180deg, #2a7d6c 0%, rgba(62, 105, 96, 0.62) 100%);
 }
 
 .submitBtn {
@@ -393,14 +416,17 @@ video:fullscreen {
 
 .contentImagesDesktop {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 36px;
 }
 
 .mainContentImage {
-  max-width: 371px;
-  min-width: 224px;
+  max-width: 100%;
   height: auto;
+  flex: 1 1 300px;
   object-fit: cover;
+  border-radius: 8px;
 }
 
 .detailContent {
@@ -412,6 +438,13 @@ video:fullscreen {
 .desktopViewDetails {
   display: flex;
   gap: 36px;
+  justify-content: space-between;
+}
+
+.midScreenView {
+  justify-content: space-between;
+  display: none;
+  gap: 20px;
 }
 
 .details {
@@ -470,6 +503,7 @@ video:fullscreen {
   top: -50px;
   margin: 0px 135px;
   align-items: center;
+  justify-content: space-between;
 }
 
 .accordianContent {
@@ -840,6 +874,13 @@ video:fullscreen {
   justify-content: space-evenly;
 }
 
+.peopleDetailContentMidScreen {
+  display: none;
+  flex-direction: column;
+  gap: 24px;
+  justify-content: space-evenly;
+}
+
 .peopleDetails {
   display: flex;
   gap: 36px;
@@ -937,8 +978,11 @@ video:fullscreen {
   }
 
   .desktopViewDetails {
-    flex-direction: column;
-    gap: 20px;
+    display: none;
+  }
+
+  .midScreenView {
+    display: flex;
   }
 
   .sucessRateBtn {
@@ -990,8 +1034,16 @@ video:fullscreen {
   }
 
   .peopleDetailContent {
-    flex-direction: column;
+    display: none;
+  }
+
+  .detailView {
+    display: flex;
     gap: 24px;
+  }
+
+  .peopleDetailContentMidScreen {
+    display: flex;
   }
 
   .peopleDetails {
@@ -1050,6 +1102,7 @@ video:fullscreen {
 
   .contentImagesDesktop {
     gap: 16px;
+    flex-wrap: nowrap;
   }
 
   .bottomLogo {
@@ -1095,9 +1148,16 @@ video:fullscreen {
   .nav-mobile-menu {
     display: none;
   }
+
+  .mainContentImage {
+    max-width: 371px;
+    min-width: 224px;
+    height: auto;
+    object-fit: cover;
+  }
 }
 
-@media (max-width: 715px) {
+@media (max-width: 760px) {
   .headerBackground {
     padding: 14px 16px 140px;
   }
@@ -1261,6 +1321,24 @@ video:fullscreen {
   .videoBg360 {
     display: block;
   }
+
+  .desktopViewDetails {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .midScreenView {
+    display: none;
+  }
+
+  .peopleDetailContent {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .peopleDetailContentMidScreen {
+    display: none;
+  }
 }
 
 @media (max-width: 560px) {
@@ -1418,5 +1496,111 @@ video:fullscreen {
 
   .contentHeadingVideo_360 {
     display: flex;
+  }
+
+  .desktopViewDetails {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .midScreenView {
+    display: none;
+  }
+
+  .peopleDetailContent {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .peopleDetailContentMidScreen {
+    display: none;
+  }
+
+}
+
+@media (min-width: 1441px) {
+
+  .headerBackground {
+    padding: 40px 128px;
+  }
+
+  .headerBackgroundImage {
+    width: 100vw;
+    height: 768px;
+  }
+
+  .shadowBackground {
+    top: -110px;
+  }
+
+  .whiteBackground {
+    top: 22px;
+    width: 100vw;
+  }
+
+  .greyBackground {
+    width: 100vw;
+  }
+
+  .details {
+    font-size: 18px;
+    flex: 1 1 300px;
+    min-width: 371px;
+  }
+
+  .desktopViewDetails {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .midScreenView {
+    display: none;
+  }
+
+  .MainContentDetail {
+    height: 768px;
+  }
+
+  .desktopViewDetails {
+    display: flex;
+  }
+
+  .midScreenView {
+    display: none;
+  }
+
+  .peopleDetailContent {
+    display: flex;
+  }
+
+  .peopleDetailContentMidScreen {
+    display: none;
+  }
+
+  .sucessRateBtn {
+    margin: auto;
+    margin-top: 10px;
+  }
+
+  .featureButton {
+    max-width: 100%;
+  }
+
+  .italicPara {
+    flex: 1 1 300px;
+  }
+
+  .videoContent {
+    background-size: cover;
+  }
+}
+
+@media (min-width: 1919px) {
+  .shadowBackground {
+    top: -144px;
+  }
+
+  .whiteBackground {
+    top: 26px;
   }
 }

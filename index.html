@@ -225,18 +225,21 @@
                     </div>
                   </div>
                 </div>
-                <select
-                  id="country"
-                  class="selectInput"
-                  onchange="handleInputChange('country')"
-                >
-                  <option value="">Country</option>
-                  <option value="india">India</option>
-                  <option value="usa">United States</option>
-                  <option value="uk">United Kingdom</option>
-                </select>
-                <div class="error-tooltip hide">
-                  This field can’t be empty.<br />Please fill it in.
+                <div class="selectField">
+                  <select
+                    id="country"
+                    class="selectInput"
+                    onchange="handleInputChange('country')"
+                  >
+                    <option value="" disabled selected hidden></option>
+                    <option value="india">India</option>
+                    <option value="usa">United States</option>
+                    <option value="uk">United Kingdom</option>
+                  </select>
+                  <label for="country">Country</label>
+                  <div class="error-tooltip hide">
+                    This field can’t be empty.<br />Please fill it in.
+                  </div>
                 </div>
               </div>
               <button class="submitBtn">
@@ -340,48 +343,53 @@
 
           <div class="horizontal-line"></div>
         </div>
-        <div class="detailContent">
-          <div class="desktopViewDetails">
-            <p class="details">
-              Older adults want to play active and meaningful roles in their
-              lives, including as part of a social network, a neighborhood, and
-              a community. Service providers and policymakers must consider that
-              a lack of sense of purpose can become problematic as people age.
-              Engaging them in leisure activities and volunteer work is
-              important.
-            </p>
-            <p class="details show-lg">
-              Older adults want to stay active and contribute to society in a
-              reciprocal manner (meaning that they want to exchange their
-              services and skills with others for the mutual benefit of the
-              neighborhood or community). Qualitative and quantitative studies
-              published from 2005 to 2016 examining the social needs of older
-              adults were eligible for inclusion.
-            </p>
-            <p class="details hide-lg">
-              Older adults want to stay active and contribute to society in a
-              reciprocal manner (meaning that they want to exchange their
-              services and skills with others for the mutual benefit of the
-              neighborhood or community).
-            </p>
-          </div>
-          <p class="details hide-lg">
-            Qualitative and quantitative studies published from 2005 to 2016
-            examining the social needs of older adults were eligible for
-            inclusion. To stimulate social contacts, neighborhood initiatives
-            can be developed. Social meeting places, such as pubs and churches
-            can help to foster the development of close and peripheral
-            relationships.
+
+        <div class="desktopViewDetails">
+          <p class="details">
+            Older adults want to play active and meaningful roles in their
+            lives, including as part of a social network, a neighborhood, and a
+            community. Service providers and policymakers must consider that a
+            lack of sense of purpose can become problematic as people age.
+            Engaging them in leisure activities and volunteer work is important.
+          </p>
+          <p class="details">
+            Older adults want to stay active and contribute to society in a
+            reciprocal manner (meaning that they want to exchange their services
+            and skills with others for the mutual benefit of the neighborhood or
+            community). Qualitative and quantitative studies published from 2005
+            to 2016 examining the social needs of older adults were eligible for
+            inclusion.
+          </p>
+          <p class="details">
+            To stimulate social contacts, neighborhood initiatives can be
+            developed. Social meeting places, such as pubs and churches can help
+            to foster the development of close and peripheral relationships.
             <button class="sucessRateBtn">
               92% Success Rate<span
                 ><img src="./assests/Arrow (Stroke).png" class="arrow"
               /></span>
             </button>
           </p>
-          <p class="details show-lg">
-            To stimulate social contacts, neighborhood initiatives can be
-            developed. Social meeting places, such as pubs and churches can help
-            to foster the development of close and peripheral relationships.
+        </div>
+        <div class="midScreenView">
+          <p class="details">
+            Older adults want to play active and meaningful roles in their
+            lives, including as part of a social network, a neighborhood, and a
+            community. Service providers and policymakers must consider that a
+            lack of sense of purpose can become problematic as people age.
+            Engaging them in leisure activities and volunteer work is
+            important.Older adults want to stay active and contribute to society
+            in a reciprocal manner (meaning that they want to exchange their
+            services and skills with others for the mutual benefit of the
+            neighborhood or community).
+          </p>
+          <p class="details">
+            Qualitative and quantitative studies published from 2005 to 2016
+            examining the social needs of older adults were eligible for
+            inclusion. To stimulate social contacts, neighborhood initiatives
+            can be developed. Social meeting places, such as pubs and churches
+            can help to foster the development of close and peripheral
+            relationships.
             <button class="sucessRateBtn">
               92% Success Rate<span
                 ><img src="./assests/Arrow (Stroke).png" class="arrow"
@@ -502,7 +510,28 @@
               <b> Interventions</b> should focus on older adult’s desire for
               connectedness, participation and independence.
             </p>
-            <div class="peopleDetails">
+            <p class="details">
+              Loneliness and social isolation are growing public health concerns
+              in our aging society. Whilst these experiences occur across the
+              life span, 50% of individuals aged over 60 are at risk of social
+              isolation and one-third will experience some degree of loneliness
+              later in life. It is vital to reduce loneliness and social
+              isolation among older adults.
+            </p>
+            <p class="details">
+              The methodology framework proposed by Arskey and O’Malley and
+              further developed by Levac, et al. was used to guide the scoping
+              review process. A total of 33 reviews met the inclusion criteria,
+              evaluating a range of interventions targeted at older people
+              residing in the community or institutionalised settings.
+            </p>
+          </div>
+          <div class="peopleDetailContentMidScreen">
+            <p class="italicPara">
+              <b> Interventions</b> should focus on older adult’s desire for
+              connectedness, participation and independence.
+            </p>
+            <div class="detailView">
               <p class="details">
                 Loneliness and social isolation are growing public health
                 concerns in our aging society. Whilst these experiences occur

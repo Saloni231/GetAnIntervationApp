@@ -64,7 +64,13 @@ const handleAccordianContentChange = () => {
 const handleDotLoader = (state) => {
   currentState = state;
   handleAccordianContentChange();
-}
+};
+
+document.querySelectorAll(".selectInput").forEach((select) => {
+  select.addEventListener("change", () => {
+    select.setAttribute("value", select.value);
+  });
+});
 
 document.querySelector(
   `.accordianStatus_${currentState}`
